@@ -1,12 +1,12 @@
 ﻿<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <meta charset="utf-8">
 <head>
-    <title>Apache Tomcat WebSocket Examples: Chat</title>
+    <title>WebSocket Test</title>
     <script type="text/javascript" src="jsbn.min.js" ></script>
     <script type="text/javascript" src="sjcl.min.js" ></script>
     <script type="application/javascript">
       
-    var ws = new WebSocket("ws://172.10.11.91:9999/ws2");
+    var ws = new WebSocket("ws://127.0.0.1:9999/test");
     
     ws.onmessage=function(msg){
     	document.getElementById("res").value = document.getElementById("res").value+msg.data+"\r\n";
@@ -31,11 +31,11 @@
     </script>
 </head>
 <body>
-    <input type="text" value="04b1080312026161" id="msg">
+    websocket发送文本：<input type="text" value="test" id="msg">
     <input type="button" value="send" onclick="send()">
     <br><br>
-    <input type="file" value="websocket upload" onchange="upload(this)">
-    <br>
+    websocket发送文件：<input type="file" value="websocket upload" onchange="upload(this)">
+    <br><br>
     <textarea id="res" rows="50" cols="50"></textarea>
 </div>
 </body>
